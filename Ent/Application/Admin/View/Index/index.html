@@ -1,0 +1,111 @@
+
+<extend name="Public/left"/>
+<block name="body">
+<div class="container">
+<!--right_wrap-->
+<div class="right_wrap">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span8">
+			<div>
+	        <h2>当前部门：{$deptname}</h2>
+	        <?php if($userRole==0 && uid): ?>
+	        <h4><a href={:U('User/userAdd')}>添加用户</a><h4>
+	        <?php endif;?>
+	        <?php if($userRole!=5 && $userRole!=0): ?>
+	        <h4><a href={:U('Notice/noticeAdd')}>发布公告</a><h4>
+	        <?php endif;?>
+		    </div>
+		    <div class="search_user">
+                <form action="{:U('index')}" method="get">
+                <input type="text"  name="fullname" id="fullname" value="<?php echo  $_GET['fullname'] ;?>"/>
+                <input  type="submit" name=""  value="搜索">
+                </form>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+								姓名
+							</th>
+							<th>
+								性别
+							</th>
+							<th>
+								职位
+							</th>
+							<?php if($userRole==0 && uid): ?>
+							<th>
+								操作
+							</th>
+							<?php endif;?>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($userList as $key =>
+	                    $value):?>
+						<tr>
+	                    <td>{$value['fullname']}</td>
+	                    <td>{$value['sex']}</td>
+	                    <td>{$value['position']}</td>
+	                    <?php if($userRole==0 && uid): ?>
+	                    <td>
+	                    	<a href="{:U('user/userEdit?id='.$value['id'])}" title="编辑" class="">编辑</a>
+	                    	<a href="{:U('user/userDel?id='.$value['id'])}" title="删除" class="">删除</a>
+	                    </td>
+	                    <?php endif;?>	
+						</tr>
+						<?php endforeach;?>
+					</tbody>
+				</table>
+			</div>
+			<div class="span4">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+								标题
+							</th>
+							<th>
+								发布人
+							</th>
+							<th>
+								操作
+							</th>						
+						</tr>
+					</thead>
+					<tfoot>
+                        <tr>
+                            <td colspan="3">
+                            <div class="pagelist">
+                                <p class="sabrosus">{$page}</p>
+                            </div>
+                        </td>
+                        </tr>
+                    </tfoot>
+					<tbody>	
+					<?php foreach ($noticeList as $key =>
+	                    $valueN):?>					
+						<tr class="info">
+							<td>
+								<a href={:U('Notice/noticeLook?id='.$valueN['id'])}>{$valueN.title}</a>
+							</td>
+							<td>
+								{$valueN.fullname}
+							</td>
+							<?php if(($userRole==0 && $uid) || ($uid==$valueN['uid'])): ?>
+			                <td>
+			                	<a href="{:U('Notice/noticeEdit?id='.$valueN['id'])}" title="编辑" class="">编辑</a>
+			                	<a href="{:U('Notice/noticeDel?id='.$valueN['id'])}" title="删除" class="">删除</a>
+			                </td>
+			                <?php endif;?>
+						</tr>
+					<?php endforeach;?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+		</div>
+</div>
+</block>
+

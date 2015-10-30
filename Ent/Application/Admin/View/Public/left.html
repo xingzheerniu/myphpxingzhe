@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>企业管理</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="__CSS__/login.css" media="all">   
+</head>
+<body>
+    <!--header-->
+    <div class="header">
+        <div class="user_center ">
+            <ul>
+                <li align="right">你好，{:session('user.fullname')}<a href="{:U('User/logout')}" class="logout_icon ">退出</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--//header-->
+    <!--main-->
+    <div class="main">
+        <!--left_bar-->
+        <div class="left_bar">
+          <ul class="left_list" style="margin:10; padding:10;margin-top:20px;">
+            <li><span class="label badge-important">相关部门</span></li>
+            <li>
+                <a href="{:U('Index/index/r/1')}">研发部 </a>
+            </li>
+            <li>
+                <a href="{:U('Index/index/r/2')}">市场部 </a>
+            </li>
+            <li class="active">
+                <a href="{:U('Index/index/r/3')}">人力资源部</a>
+            </li>
+            <li class="active">
+                <a href="{:U('Index/index/r/4')}">财务部</a>
+            </li>
+            <li class="active">
+                <a href="{:U('Index/index/r/5')}">管理层</a>
+            </li>
+            <li class="active">
+                <a href="{:U('Index/index')}">返回首页</a>
+            </li>
+        </ul>
+    </div>
+    <!--//left_bar-->
+    <!--right_wrap-->
+    <block name="body"></block>
+    <!--//right_wrap-->
+</div>
+<!--//main-->
+</body>
+<script type="text/javascript" src="__STATIC__/jquery.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/bootstrap/js/bootstrap.min.js"></script>
+<block name="js"></block>
+</html>

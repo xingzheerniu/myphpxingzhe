@@ -1,0 +1,42 @@
+<extend name="Public/left"/>
+
+<block name="body">
+  <div class="container">
+      <!--right_wrap-->
+      <div class="right_wrap">
+        <div>
+          <h2>查看公告</h2>
+        </div>
+        <div class="wrap_content">
+        <table width="99%" border="1" cellspacing="10" cellpadding="10" class="">
+          <thead>
+                <tr>
+                    <th>
+                        <?php echo $value['title']; ?>
+                  </th>
+              </tr>
+             </thead>
+          <tbody>
+              <tr>
+                  <td colspan="2">
+                      <div class=""> <em>发布人：</em>
+                          <span>
+                              <?php echo get_fullname($value['uid']);?></span> 
+                      </div>
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="2">
+                      <div class="">
+                          <?php echo $value['content']?></div><hr/>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+    </div>
+  <!--//right_wrap-->
+  </div>
+</block>
+
+

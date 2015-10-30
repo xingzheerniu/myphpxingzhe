@@ -1,0 +1,37 @@
+body{
+	background: #efefef;
+}
+#login {
+    background-color: #FFF;
+    border: 1px solid #E5E5E5;
+    padding: 25px 0 0 10px;
+    margin-top: 150px;
+}
+.verifyimg{
+	cursor: pointer;
+}
+/*=======left_bar=======*/
+.main{ position:relative;height: auto;min-height: 100%;width: 100%; clear:both;}
+.left_bar{ position:absolute;top:0px; bottom: 0; left:0; width:140px; height:800px;color:#555555; background:#eaeaea; border-right:#d8d8d8 1px solid;}
+.left_bar .left_list li{ vertical-align: bottom;height:45px;_height:45px; border-top:#f8f8f8 1px solid; border-bottom:#d8d8d8 1px solid; position:relative; clear:both;}
+.left_bar .left_list .nav_title{position:absolute; left:45px; top:15px;}
+.left_bar .left_list .nav_icon{ position:absolute; left:15px; top:15px;}
+.left_bar .left_list .icon_index{ background-position:0 -96px;}
+.left_bar .left_list .icon_notice{ background-position:0 -50px;}
+.left_bar .left_list .icon_setting{ background-position:-40px -96px;}
+.left_bar .left_list .icon_manage{ background-position:-84px -96px;}
+.left_bar .left_list .icon_work{ background-position:-132px -96px;}
+.left_bar .left_list .icon_record{ background-position:-176px -96px;}
+.left_bar .left_list .icon_book{ background-position:-219px -96px;}
+.left_bar .left_list .icon_shrink{ background-position:0 -137px;}
+.left_bar .left_list .shrink_font{ color:#999999;}
+/*=======right_wrap=======*/
+.right_wrap{margin-left:140px; }
+.position{ width:auto; height:60px; border-bottom:#b0c6d6 2px solid; padding:0 20px 0 30px; clear:both;}
+.position .p_title{ float:left; font-size:18px; color:#216c90; font-weight:100; padding-top:20px; }
+.position .part_child{ margin-top:10px; float:right; border:#e2e2e2 1px solid;}
+.position .part_child li{ float:left;  border-right:#dddddd 1px solid;border-left:#fff 1px solid; border-top:#fff 1px solid;}
+.wrap_content{ padding:10px 20px 0 30px;}
+.top_action {overflow:hidden; height:46px;}
+.top_action .table_nav{ float:left;}
+.top_action .search_number{ float:right;}
